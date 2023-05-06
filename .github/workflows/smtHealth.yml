@@ -1,0 +1,28 @@
+
+name: 编译 smtHealth APP并推送至飞书消息
+
+on:
+  # Triggers the workflow on push or pull request events but only for the "main" branch
+  # push:
+  #  branches: [ "main" ]
+  #pull_request:
+  #  branches: [ "main" ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Clone smtHealth 仓库
+        run: git clone https://${{ secrets.CODING_NET_USER }}:${{ secrets.CODING_NET_TOKEN }}@${{ secrets.CODING_NET_REPO_URL }}
+
+      - name: 编译 stmhealth 工程
+        run: |
+          java --version
+          gradle --version
+          cat health_ot.py
+          echo ====================== 编译完成 ===========================
