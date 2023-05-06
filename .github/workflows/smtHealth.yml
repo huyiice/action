@@ -22,8 +22,8 @@ jobs:
 
       - name: 编译 stmhealth 工程
         run: |
-          java --version
-          gradle --version
+          export
           cd StmHealth
-          cat health_ot.py
+          sudo chmod 777 ./gradlew
+          ./gradlew assembledebug
           echo ====================== 编译完成 ===========================
