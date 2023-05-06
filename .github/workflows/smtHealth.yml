@@ -24,5 +24,6 @@ jobs:
         run: |
           java --version
           gradle --version
+          cd StmHealth
           cat health_ot.py
           echo ====================== 编译完成 ===========================
